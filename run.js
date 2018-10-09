@@ -6,7 +6,7 @@ var schedule = require('node-schedule');
 function scheduleCronstyle() {
 
     //job任务
-    schedule.scheduleJob('0 */1 * * * ?', function () {
+    schedule.scheduleJob('*/30 * * * * ?', function () {
         runJob();
     });
 
