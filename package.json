@@ -1,0 +1,26 @@
+{
+  "name": "truffle_learn_06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "async": "^2.4.0",
+    "truffle": "3.4.11",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^0.18.4"
+  },
+  "dependencies": {
+    "mysql": "^2.15.0",
+    "zeppelin-solidity": "^1.6.0",
+    "truffle-contract": "^3.0.6",
+    "truffle-wallet-provider": "git+https://github.com/blockchain-technical-practice/truffle-wallet-provider.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
