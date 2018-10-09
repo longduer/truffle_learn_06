@@ -3,16 +3,6 @@ var Tx = require("ethereumjs-tx"); //引入以太坊js交易支持
 var accountTool = require('./service/newAccountTool');
 var schedule = require('node-schedule');
 
-
-//初始化web3
-if (typeof web3 !== 'undefined') {
-    web3 = new Web3(web3.currentProvider);
-} else {
-    //我本地的私有链信息
-    //启用命令：> geth --networkid 1108 --nodiscover --datadir ./ --rpc --rpcapi net,eth,web3,personal --rpcaddr 127.0.0.1 --rpcport 8545 console
-    web3 = new Web3(new Web3.providers.HttpProvider("http://172.16.10.86:8545"));
-}
-
 function scheduleCronstyle() {
 
     //job任务
@@ -34,19 +24,38 @@ scheduleCronstyle();
 
 
 function runJob() {
+
+    var httpProviders = [
+        "http://192.168.23.64:8545",
+        "http://192.168.23.71:8545",
+        "http://192.168.23.76:8545",
+        "http://192.168.23.149:8545",
+        "http://192.168.23.164:8545",
+        "http://192.168.23.184:8545",
+        "http://172.16.10.81:8545",
+        "http://172.16.10.82:8545",
+        "http://172.16.10.83:8545",
+        "http://172.16.10.86:8545",
+        "http://172.16.10.88:8545",
+        "http://172.16.10.188:8545"
+    ];
+    var r = Math.floor(Math.random()*11);
+    console.info('date: ' + new Date() + ";httpProviders: " + httpProviders[r]);
+    web3 = new Web3(new Web3.providers.HttpProvider(httpProviders[r]));
+
     var maxPage = 10;
     var maxPageSize = 50;
     var current_page = Math.floor(Math.random()*maxPage);
     var pageSize = Math.floor(Math.random()*maxPageSize);
 
-    console.info('current_page: ' + current_page);
-    console.info('pageSize: ' + pageSize);
+    console.info('date: ' + new Date() + ';current_page: ' + current_page);
+    console.info('date: ' + new Date() + ';pageSize: ' + pageSize);
     // var current_page = 1;
     // var pageSize = 10;
     var pageFrom = pageSize * (current_page - 1);
     accountTool.getAccounts(pageSize, pageFrom,function (err, result) {
         var length = result.length;
-        console.info('length: ' + length);
+        console.info('date: ' + new Date() + 'length: ' + length);
         for (var i = 1; i < length; i++) {
 
             //交易接收者
@@ -75,7 +84,7 @@ function runJob() {
             var serializedTx = tx.serialize();
             //执行交易
             web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function (err, hash) {
-                console.log('transaction id ：' + hash + 'error:' + err);
+                console.log('date: ' + new Date() + ';transaction id ：' + hash + 'error:' + err);
             });
         }
     });
