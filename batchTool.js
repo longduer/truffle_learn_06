@@ -29,7 +29,7 @@ async function batchTransfer(receives, amounts) {
             value:web3.toWei(55,'ether'),
             from: senderAddress,
             gas: 3141592,
-            gasPrice: web3.toWei(1,'gwei')
+            gasPrice: web3.toWei(10,'gwei')
         }
     ).then(function (tx) {
         console.info(JSON.stringify(tx));

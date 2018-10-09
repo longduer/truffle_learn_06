@@ -23,7 +23,7 @@ accountTool.getAccounts(pageSize, pageFrom, function (err,result) {
     for (var i =0 ;i<result.length;i++) {
         accountArray.push(result[i].public_key);
     }
-    console.info(current_page + " page;" + accountArray.length);
+    console.info("page: " + current_page + ";pagesize: " + accountArray.length);
     //console.info(accountArray.length);
     batchTool.batchTransfer(accountArray, web3.toWei(1, "ether"));
 });

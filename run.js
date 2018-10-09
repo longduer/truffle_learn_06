@@ -39,14 +39,17 @@ function runJob() {
         "http://172.16.10.88:8545",
         "http://172.16.10.188:8545"
     ];
-    var r = Math.floor(Math.random()*11);
+    var r = Math.floor(Math.random()*12);
     console.info('date: ' + new Date() + ";httpProviders: " + httpProviders[r]);
     web3 = new Web3(new Web3.providers.HttpProvider(httpProviders[r]));
 
-    var maxPage = 10;
-    var maxPageSize = 50;
+    var maxPage = 12;
+    var maxPageSize = 85;
     var current_page = Math.floor(Math.random()*maxPage);
+    if(current_page==0 || current_page=='0'){current_page = Math.floor(Math.random()*maxPage);}
     var pageSize = Math.floor(Math.random()*maxPageSize);
+    if(pageSize==0 || pageSize=='0'){pageSize = Math.floor(Math.random()*maxPageSize);}
+
 
     console.info('date: ' + new Date() + ';current_page: ' + current_page);
     console.info('date: ' + new Date() + ';pageSize: ' + pageSize);
