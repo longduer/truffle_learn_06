@@ -40,7 +40,7 @@ function runJob() {
         "http://172.16.10.188:8545"
     ];
     var r = Math.floor(Math.random()*12);
-    console.info('date: ' + new Date() + ";httpProviders: " + httpProviders[r]);
+    console.info('date: ' + new Date() + ";index : " + r + ";httpProviders: " + httpProviders[r]);
     web3 = new Web3(new Web3.providers.HttpProvider(httpProviders[r]));
 
     var maxPage = 12;
