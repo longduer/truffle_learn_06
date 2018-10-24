@@ -15,9 +15,9 @@ var AccountService ={
             account.txCount = '';
 
             accountDb.addAccount(account, function (error, result) {
-                //console.info(i+1);
+                console.info(i+1);
                 //console.info('error: ' + error);
-                console.info(i + ' : error: ' + error +  ' result: ' + JSON.stringify(result));
+                // console.info(i + ' : error: ' + error +  ' result: ' + JSON.stringify(result));
             });
         }
     },

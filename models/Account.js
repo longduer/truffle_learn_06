@@ -3,12 +3,12 @@ var db = require('../db');
 
 var Account={
     addAccount:function(Account,callback){
-        return db.query("Insert into account_02 values(?,?,?,?)",
+        return db.query("Insert into account values(?,?,?,?)",
             [Account.publicKey,Account.privateKey,Account.lastTxTimestamp,Account.txCount],callback);
         //return db.query("insert into task(Id,Title,Status) values(?,?,?)",[Task1.Id,Task1.Title,Task1.Status],callback);
     }
     ,getAllAccounts:function(num, offset, callback){
-        return db.query("select * from account_02 order by public_key desc limit ? offset ?", [num, offset], callback);
+        return db.query("select * from account order by public_key desc limit ? offset ?", [num, offset], callback);
     },
     // getTaskById:function(id,callback){
     //     return db.query("select * from task where Id=?", [id], callback);

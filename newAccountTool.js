@@ -1,3 +1,3 @@
 var accountTool = require('./service/newAccountTool');
 
-accountTool.addAccount(10);
+accountTool.addAccount(1000);

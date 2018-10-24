@@ -21,15 +21,15 @@ async function getIONCBatchInstance() {
 }
 
 
-async function batchTransfer(receives, amounts) {
+async function batchTransfer(receives, amounts, totalValue) {
     await getIONCBatchInstance();
 
     await IONCBatchInstance.sendEth(receives, amounts,
         {
-            value:web3.toWei(55,'ether'),
+            value:web3.toWei(totalValue,'ether'),
             from: senderAddress,
             gas: 3141592,
-            gasPrice: web3.toWei(10,'gwei')
+            gasPrice: web3.toWei(3,'gwei')
         }
     ).then(function (tx) {
         console.info(JSON.stringify(tx));
