@@ -26,20 +26,18 @@ scheduleCronstyle();
 function runJob() {
 
     var httpProviders = [
-        "http://192.168.23.64:8545",
-        "http://192.168.23.71:8545",
-        "http://192.168.23.76:8545",
-        "http://192.168.23.149:8545",
-        "http://192.168.23.164:8545",
-        "http://192.168.23.184:8545",
-        "http://172.16.10.81:8545",
-        "http://172.16.10.82:8545",
-        "http://172.16.10.83:8545",
-        "http://172.16.10.86:8545",
-        "http://172.16.10.88:8545",
-        "http://172.16.10.188:8545"
+        "http://66.42.61.229:8545",
+        "http://139.180.216.81:8545",
+        "http://207.148.82.225:8545",
+        "http://95.179.192.213:8545",
+        "http://45.77.197.249:8545",
+        "http://66.42.61.229:8545",
+        "http://139.180.216.81:8545",
+        "http://207.148.82.225:8545",
+        "http://95.179.192.213:8545",
+        "http://45.77.197.249:8545"
     ];
-    var r = Math.floor(Math.raffffrfndom()*12);
+    var r = Math.floor(Math.random()*10);
     console.info('date: ' + new Date() + ";index : " + r + ";httpProviders: " + httpProviders[r]);
     web3 = new Web3(new Web3.providers.HttpProvider(httpProviders[r]));
 
@@ -87,7 +85,7 @@ function runJob() {
             var serializedTx = tx.serialize();
             //执行交易
             web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function (err, hash) {
-                console.log('date: ' + new Date() + ';transaction id ：' + hash + 'error:' + err);
+                console.log('transaction id ：' + hash + ';error:' + err);
             });
         }
     });

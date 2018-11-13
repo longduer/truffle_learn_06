@@ -1,6 +1,6 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
 
-var mnemonic = "orange apple banana ... ";
+var mnemonic = "pelican boat busy mother trust yellow neglect agree sheriff chase annual brother";
 
 module.exports = {
     // See <http://truffleframework.com/docs/advanced/configuration>
@@ -31,6 +31,13 @@ module.exports = {
                 return new HDWalletProvider(mnemonic, "https://mainnet.infura.io/JOEnl84Gm76oX0RMUrJB ")
             },
             network_id: 3
+        },
+        ioncnet: {
+            provider: function() {
+                return new HDWalletProvider(mnemonic, "http://139.180.216.81:8545")
+            },
+            network_id:"*",
+            gas:500000
         }
     }
 };
