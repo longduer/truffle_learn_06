@@ -37,7 +37,7 @@ function runJob() {
         "http://95.179.192.213:8545",
         "http://45.77.197.249:8545"
     ];
-    var r = Math.floor(Math.random()*10);
+    var r = Math.floor(Math.random()*9);
     console.info('date: ' + new Date() + ";index : " + r + ";httpProviders: " + httpProviders[r]);
     web3 = new Web3(new Web3.providers.HttpProvider(httpProviders[r]));
 

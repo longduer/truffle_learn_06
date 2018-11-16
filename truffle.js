@@ -37,7 +37,7 @@ module.exports = {
                 return new HDWalletProvider(mnemonic, "http://139.180.216.81:8545")
             },
             network_id:"*",
-            gas:500000
+            gas:4712388
         }
     }
 };
