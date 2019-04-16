@@ -9,10 +9,10 @@ batchTool.init({
     senderAddress: "0xeb680f30715f347d4eb5cd03ac5eced297ac5046",
     privateKey: "526e8873ef9f71d72c06fad033770777da9914239996351e6206060a47c456cc",
     IONCBatchAddress:"0x951e7770e6321a30b704122a88c8a967bf35d13f",
-    provider: "http://139.180.216.81:8545"
+    provider: "http://66.42.61.229:8545"
 });
 
-var current_page = 100;
+var current_page = 1;
 var pageSize = 50;
 
 function scheduleCronstyle() {

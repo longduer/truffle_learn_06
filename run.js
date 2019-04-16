@@ -25,21 +25,12 @@ scheduleCronstyle();
 
 function runJob() {
 
-    var httpProviders = [
-        "http://66.42.61.229:8545",
-        "http://139.180.216.81:8545",
-        "http://207.148.82.225:8545",
-        "http://95.179.192.213:8545",
-        "http://45.77.197.249:8545",
-        "http://66.42.61.229:8545",
-        "http://139.180.216.81:8545",
-        "http://207.148.82.225:8545",
-        "http://95.179.192.213:8545",
-        "http://45.77.197.249:8545"
-    ];
-    var r = Math.floor(Math.random()*9);
-    console.info('date: ' + new Date() + ";index : " + r + ";httpProviders: " + httpProviders[r]);
-    web3 = new Web3(new Web3.providers.HttpProvider(httpProviders[r]));
+    // var httpProviders = [
+    //     "http://66.42.61.229:8545"
+    // ];
+    // var r = Math.floor(Math.random()*9);
+    // console.info('date: ' + new Date() + ";index : " + r + ";httpProviders: " + httpProviders[r]);
+    web3 = new Web3(new Web3.providers.HttpProvider('http://66.42.61.229:8545'));
 
     var maxPage = 12;
     var maxPageSize = 85;

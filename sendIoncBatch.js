@@ -15,7 +15,7 @@ batchTool.init({
 //transfer.approve(0)
 //transfer.approve(5);
 
-var current_page = 5;
+var current_page = 1;
 var pageSize = 50;
 var pageFrom = pageSize * (current_page - 1);
 accountTool.getAccounts(pageSize, pageFrom, function (err,result) {
@@ -24,7 +24,7 @@ accountTool.getAccounts(pageSize, pageFrom, function (err,result) {
         accountArray.push(result[i].public_key);
     }
     console.info("page: " + current_page + ";pagesize: " + accountArray.length);
-    console.info(accountArray);
+    // console.info(accountArray);
     batchTool.batchTransfer(accountArray, web3.toWei(1, "ether"));
 });
 

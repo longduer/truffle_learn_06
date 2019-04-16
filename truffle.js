@@ -34,7 +34,7 @@ module.exports = {
         },
         ioncnet: {
             provider: function() {
-                return new HDWalletProvider(mnemonic, "http://139.180.216.81:8545")
+                return new HDWalletProvider(mnemonic, "http://66.42.61.229:8545")
             },
             network_id:"*",
             gas:4712388
