@@ -1,17 +1,17 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
 
-var mnemonic = "pelican boat busy mother trust yellow neglect agree sheriff chase annual brother";
+var mnemonic = "cost faint robot enroll route call exclude wrong envelope plug enter wear";
 
 module.exports = {
     // See <http://truffleframework.com/docs/advanced/configuration>
     // to customize your Truffle configuration!
     networks:{
-        development: {
-            host: "192.168.23.71",
+        dev: {
+            host: "192.168.23.101",
             port:"8545",
             gas: 4712388,
-            network_id: "1",
-            from: "0x7a261075c737163ae2525f271717f3dbf5450b8c"
+            network_id: "*",
+            from: "0xb5c1d2730301e4cbc568b5a04367f867f26f4345"
         },
         host: {
             host: "127.0.0.1",
