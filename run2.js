@@ -27,10 +27,12 @@ function runJob() {
 
     var httpProviders = [
         "http://192.168.23.178:8545",
-        "http://192.168.23.101:8545"
+        "http://192.168.23.101:8545",
+        "http://192.168.23.99:8545",
+        "http://192.168.23.98:8545"
 
     ];
-    var r = Math.floor(Math.random()*2);
+    var r = Math.floor(Math.random()*4);
     console.info('date: ' + new Date() + ";index : " + r + ";httpProviders: " + httpProviders[r]);
     web3 = new Web3(new Web3.providers.HttpProvider(httpProviders[r]));
     //交易接收者
