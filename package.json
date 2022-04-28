@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "async": "^2.4.0",
+    "async": "^2.6.4",
     "truffle-hdwallet-provider": "0.0.3",
     "web3": "^0.20.7"
   },
